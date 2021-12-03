@@ -60,4 +60,4 @@ Some ideas might be to validate the form data to ensure the data is acceptable a
 
 Although not a requirement, we recommend using Git from the very beginning. Make sure to commit often and to use well-formatted commit messages that conform to our Git Style Guide.
 
-### Add text. 
+
