@@ -83,18 +83,37 @@
         console.log(dino.fact);
     });
     */
-   
+
     // Create Dino Constructor
-    
+    function DinoConstruct() {
+        this.
+    }
+
+    let creature = new DinoConstruct();
 
     // Create Dino Objects
-
+    const dinoObj = {};
 
     // Create Human Object
+    const humanObj = {};
 
     // Use IIFE to get human data from form
+    (function getHuman(name, height, weight, diet) {
+        
+        }
+    )();
 
-
+    /**Add a submit event listener to the dino-compare form. Try to console.log the dinos data when the form is submitted.
+     * Example:
+     * function logSubmit(event) {
+     * log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
+     * event.preventDefault();
+     * }
+     * 
+     * const form = document.getElementById('form');
+     * const log = document.getElementById('log');
+     * form.addEventListener('submit', logSubmit);
+     */
     // Create Dino Compare Method 1
     // NOTE: Weight in JSON file is in lbs, height in inches. 
 
