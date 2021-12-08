@@ -86,7 +86,13 @@
 
     // Create Dino Constructor
     function DinoConstruct() {
-        this.
+        this.species;
+        this.weight;
+        this.height;
+        this.diet;
+        this.where;
+        this.when;
+        this.fact;
     }
 
     let creature = new DinoConstruct();
