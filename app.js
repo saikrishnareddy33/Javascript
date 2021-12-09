@@ -1,13 +1,17 @@
     /**
-     * I feel like I was set up to fail since the course did not cover lessons on how to incorporate JS with HTML and CSS.
+     * I am confused how to do this Dinosaurs project. The object-oriented JS lessons did not cover how to 
+     * incorporate it with HTML and CSS. I feel like I am set up to fail since the lessons did not provide
+     * content material that would help set us up for this project. 
      * I have posted two mentor questions on Udacity Knowledge and still have not received any assistance:
      * - https://knowledge.udacity.com/questions/759312
      * - https://knowledge.udacity.com/questions/759263
      * This Dinosaurs project is due today, 12/9/2021!
-     * Anyway, this is as far as I got.
+     * Anyway, this is the best I could do based on what I could comprehend on the project's requirements.
+     * It would be great if a Mentor could provide real-time assistance, where they could help
+     * break down the logic into more understandable, simplistic next steps.
      */    
     
-    //Get the dino.json data
+    //1. Get the dino.json data
     const dinoFacts = {
         "Dinos": [
             {
@@ -94,8 +98,12 @@
     });
     */
 
-    //Source: https://knowledge.udacity.com/questions/302516
-    //Function that loops through the dino data to create html and place it to the DOM:
+    /**2. Display Dinosaurs species to grid
+     * I don't understand the exact breakdown of this code, but found it on Udacity's Knowledge posts during my research
+     * Source: https://knowledge.udacity.com/questions/302516
+     * It's supposed to be a function that loops through the dino data to create html and place it to the DOM
+     * I don't understand why it's passing a #grid instead of just grid for its argument??
+     */
     function displayData () {
         dinoFacts.Dinos.forEach((dino)=> {
             const grid = document.querySelector("#grid");
@@ -109,7 +117,7 @@
         })
     }
 
-    // Create Dino Constructor <-- what is the main goal for this??
+    //3. Create Dino Constructor <-- what is the main goal for this??
     function DinoConstruct() {
         this.species = species;
         this.weight = weight;
@@ -122,19 +130,10 @@
 
     let creature = new DinoConstruct();
 
-    // Create Dino Objects <-- what is the main goal for this??
+    //4. Create Dino Objects <-- why do I need this when I already have the dinoFacts variable (line 15) containing the Dinosaurs facts?
     const dinoObj = {};
 
-    // Create Human Object <-- what is the main goal for this??
-    const humanObj = {};
-
-    // Use IIFE to get human data from form
-    (function getHuman(name, height, weight, diet) {
-        
-        }
-    )();
-
-    //Variables to reference the user form
+    //5. Variables to reference the user form
     const nameForm = document.getElementById('name');
     const heightFtForm = document.getElementById('feet');
     const heightInForm = document.getElementById('inches');
@@ -142,28 +141,42 @@
     const dietForm = document.getElementById('diet');
     const buttonForm = document.getElementById('btn');
 
-    // Create Dino Compare Method 1
+    //6. Create Human Object <-- is this used to store the human data?
+    const humanObj = {
+        name: nameForm,
+        height: heightFtForm + heightInForm,
+        weight: weightForm,
+        diet: dietForm
+    };
+
+    //7. Use IIFE to get human data from form
+    (function getHuman(name, height, weight, diet) {
+        return humanObj;
+    }
+    )();
+
+    //8. Create Dino Compare Method 1
     // NOTE: Weight in JSON file is in lbs, height in inches. 
 
     
-    // Create Dino Compare Method 2
+    //9. Create Dino Compare Method 2
     // NOTE: Weight in JSON file is in lbs, height in inches.
 
     
-    // Create Dino Compare Method 3
+    //10. Create Dino Compare Method 3
     // NOTE: Weight in JSON file is in lbs, height in inches.
 
 
-    // Generate Tiles for each Dino in Array <-- how do you do this?
+    //11. Generate Tiles for each Dino in Array <-- how do you do this??
 
   
         // Add tiles to DOM
 
-    // Remove form from screen <-- don't know how to do this
+    //12. Remove form from screen <-- how to do this??
 
 
 
-    // On button click, prepare and display infographic
+    //13. On button click, prepare and display infographic
     /**Add a submit event listener to the dino-compare form. Try to console.log the dinos data when the form is submitted.
      */
     buttonForm.addEventListener('click', (function() {
