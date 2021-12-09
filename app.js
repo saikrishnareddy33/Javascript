@@ -1,10 +1,10 @@
     /**
-     * I feel like I was set up to fail since the course did not cover lessons on HTML and CSS, and how to use that with JavaScript.
+     * I feel like I was set up to fail since the course did not cover lessons on how to incorporate JS with HTML and CSS.
      * I have posted two mentor questions on Udacity Knowledge and still have not received any assistance:
      * - https://knowledge.udacity.com/questions/759312
      * - https://knowledge.udacity.com/questions/759263
      * This Dinosaurs project is due today, 12/9/2021!
-     * 
+     * Anyway, this is as far as I got.
      */    
     
     //Get the dino.json data
@@ -92,24 +92,22 @@
         //console.log(dino.species);
         //console.log(dino.fact);
     });
-
+    */
 
     //Source: https://knowledge.udacity.com/questions/302516
     //Function that loops through the dino data to create html and place it to the DOM:
     function displayData () {
-        dino.forEach(()=> {
+        dinoFacts.Dinos.forEach((dino)=> {
             const grid = document.querySelector("#grid");
             grid.innerHTML += `
                 <div class="grid-item">
-                    <h3>${species}</h3>
+                    <h3>${dino.species}</h3>
                     <img src=" alt="" />
                     <p>facts</p>
                 </div>
             `;
         })
     }
-
-    */
 
     // Create Dino Constructor <-- what is the main goal for this??
     function DinoConstruct() {
@@ -136,18 +134,7 @@
         }
     )();
 
-    /**Add a submit event listener to the dino-compare form. Try to console.log the dinos data when the form is submitted.
-     * Source: https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event
-     * Example:
-     * function logSubmit(event) {
-     * log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
-     * event.preventDefault();
-     * }
-     * 
-     * const form = document.getElementById('form');
-     * const log = document.getElementById('log');
-     * form.addEventListener('submit', logSubmit);
-     */
+    //Variables to reference the user form
     const nameForm = document.getElementById('name');
     const heightFtForm = document.getElementById('feet');
     const heightInForm = document.getElementById('inches');
@@ -176,7 +163,14 @@
 
 
 
-    // On button click, prepare and display infographic <-- don't know how to do this
+    // On button click, prepare and display infographic
+    /**Add a submit event listener to the dino-compare form. Try to console.log the dinos data when the form is submitted.
+     */
+    buttonForm.addEventListener('click', (function() {
+        return function() {
+            console.log(dinoFacts.Dinos);
+        }
+    })());
 
 
     
