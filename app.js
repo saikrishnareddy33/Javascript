@@ -1,3 +1,12 @@
+    /**
+     * I feel like I was set up to fail since the course did not cover lessons on HTML and CSS, and how to use that with JavaScript.
+     * I have posted two mentor questions on Udacity Knowledge and still have not received any assistance:
+     * - https://knowledge.udacity.com/questions/759312
+     * - https://knowledge.udacity.com/questions/759263
+     * This Dinosaurs project is due today, 12/9/2021!
+     * 
+     */    
+    
     //Get the dino.json data
     const dinoFacts = {
         "Dinos": [
@@ -84,6 +93,7 @@
         //console.log(dino.fact);
     });
 
+
     //Source: https://knowledge.udacity.com/questions/302516
     //Function that loops through the dino data to create html and place it to the DOM:
     function displayData () {
@@ -101,7 +111,7 @@
 
     */
 
-    // Create Dino Constructor
+    // Create Dino Constructor <-- what is the main goal for this??
     function DinoConstruct() {
         this.species = species;
         this.weight = weight;
@@ -114,10 +124,10 @@
 
     let creature = new DinoConstruct();
 
-    // Create Dino Objects
+    // Create Dino Objects <-- what is the main goal for this??
     const dinoObj = {};
 
-    // Create Human Object
+    // Create Human Object <-- what is the main goal for this??
     const humanObj = {};
 
     // Use IIFE to get human data from form
@@ -127,6 +137,7 @@
     )();
 
     /**Add a submit event listener to the dino-compare form. Try to console.log the dinos data when the form is submitted.
+     * Source: https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event
      * Example:
      * function logSubmit(event) {
      * log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
@@ -156,11 +167,17 @@
     // NOTE: Weight in JSON file is in lbs, height in inches.
 
 
-    // Generate Tiles for each Dino in Array
+    // Generate Tiles for each Dino in Array <-- how do you do this?
+
   
         // Add tiles to DOM
 
-    // Remove form from screen
+    // Remove form from screen <-- don't know how to do this
 
 
-// On button click, prepare and display infographic
+
+    // On button click, prepare and display infographic <-- don't know how to do this
+
+
+    
+    
