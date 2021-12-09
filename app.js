@@ -79,20 +79,37 @@
     
     /**Test if able to output the data
     dinoFacts.Dinos.forEach(function(dino) {
-        console.log(dino.species);
-        console.log(dino.fact);
+        console.log(dino);
+        //console.log(dino.species);
+        //console.log(dino.fact);
     });
+
+    //Source: https://knowledge.udacity.com/questions/302516
+    //Function that loops through the dino data to create html and place it to the DOM:
+    function displayData () {
+        dino.forEach(()=> {
+            const grid = document.querySelector("#grid");
+            grid.innerHTML += `
+                <div class="grid-item">
+                    <h3>${species}</h3>
+                    <img src=" alt="" />
+                    <p>facts</p>
+                </div>
+            `;
+        })
+    }
+
     */
 
     // Create Dino Constructor
     function DinoConstruct() {
-        this.species;
-        this.weight;
-        this.height;
-        this.diet;
-        this.where;
-        this.when;
-        this.fact;
+        this.species = species;
+        this.weight = weight;
+        this.height = height;
+        this.diet = diet;
+        this.where = where;
+        this.when = when;
+        this.fact = fact;
     }
 
     let creature = new DinoConstruct();
@@ -120,6 +137,13 @@
      * const log = document.getElementById('log');
      * form.addEventListener('submit', logSubmit);
      */
+    const nameForm = document.getElementById('name');
+    const heightFtForm = document.getElementById('feet');
+    const heightInForm = document.getElementById('inches');
+    const weightForm = document.getElementById('weight');
+    const dietForm = document.getElementById('diet');
+    const buttonForm = document.getElementById('btn');
+
     // Create Dino Compare Method 1
     // NOTE: Weight in JSON file is in lbs, height in inches. 
 
