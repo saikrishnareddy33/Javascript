@@ -118,7 +118,8 @@
     }
 
     //3. Create Dino Constructor <-- what is the main goal for this??
-    function DinoConstruct() {
+    class Dino
+        constructor(species, weight, height, diet, where, when, fact) {
         this.species = species;
         this.weight = weight;
         this.height = height;
@@ -128,7 +129,7 @@
         this.fact = fact;
     }
 
-    let creature = new DinoConstruct();
+    let creature = new constructor();
 
     //4. Create Dino Objects <-- why do I need this when I already have the dinoFacts variable (line 15) containing the Dinosaurs facts?
     const dinoObj = {};
@@ -155,16 +156,101 @@
     }
     )();
 
-    //8. Create Dino Compare Method 1
-    // NOTE: Weight in JSON file is in lbs, height in inches. 
-
     
-    //9. Create Dino Compare Method 2
-    // NOTE: Weight in JSON file is in lbs, height in inches.
-
+    //comparing weight of dino with human  (method1)
+    function comparingWeight(object1, object2) {
+        let diff = object2.height - object1.height;
+        return (object2.height > object1.height) ? `The ${object2.species} is ${diff} lbs more than you!`
+            : (object2.height < object1.height) ? `You're ${Math.abs(diff)} lbs more than the ${object2.species}!`
+                : `You are as same as ${object2.species}`;
     
-    //10. Create Dino Compare Method 3
-    // NOTE: Weight in JSON file is in lbs, height in inches.
+    }
+
+     // comparing height of dino with human  (method2)
+
+     function comparingheight(object1, object2) {
+        let diff = object2.height - object1.height;
+        return (object2.height > object1.height) ? `The ${object2.species} is ${diff} inches more than you!`
+            : (object2.height < object1.height) ? `You're ${Math.abs(diff)} inches more than the ${object2.species}!`
+                : `You are as same as ${object2.species}`;
+    
+    }
+    
+    //comparing diet of dino with human  (method3)
+    function comparingDiet(object1, object2) {
+        return (object2.diet === object1.diet) ? `You and ${object2.species} has the same diet!`
+            : `You have so different diet! ${object2.species} is ${object2.diet}`;
+    
+    }
+    // change facts function added to get random facts
+    function randomFacts(num, dinoData, HumanData) {
+        let fact;
+        switch (num) {
+            case 1:
+                //comparing weight 
+                fact = comparingWeight(dinoData, HumanData);
+                return fact;
+            case 2:
+                // for comparing height
+                fact = comparingHeight(dinoData, HumanData);
+                return fact;
+            case 3:
+                // for comparing diet 
+                fact = comparingDiet(dinoData,HumanData);
+                return fact;
+            case 4:
+                // return fact
+                return `The ${HumanData.species} is ${HumanData.diet} discovered in ${HumanData.when}`;
+            case 5:
+                //return fact
+                return `The ${HumanData.species} is  discovered at ${HumanData.where}`;
+            case 6:
+                //return fact
+                return `The ${HumanData.species} is ${HumanData.diet},and fact about is ${HumanData.fact}`;
+            default:
+                return `You know ${HumanData.species} is ${HumanData.fact}`;
+        }
+    }
+    
+    
+    // Generate Tiles for each Dino in Array
+    function addTiles(obj) {
+        let grid = document.getElementById('grid');
+        dinoObj.forEach((data) => {
+            //div
+            const div = document.createElement('div');
+            // image 
+            let image = document.createElement('img');
+            let img = data.image;
+            image.src = img;
+    
+            //h3
+            const h3 = document.createElement('h3');
+            //p
+            const p = document.createElement('p');
+    
+            if (data.species === 'human') {
+                h3.textContent = obj.name;
+            }
+            else if (data.species === 'Pigeon') {
+                h3.textContent = data.species;
+                p.textContent = 'All birds are Dinosaurs.';
+            }
+            else {
+                h3.textContent = data.species;
+                let randomNum = Math.floor((Math.random() * 7) + 1);
+                p.textContent = randomFacts(randomNum, obj, data); // to get random facts
+            }
+    
+            //Add tiles to DOM
+            grid.appendChild(div);
+            div.classList.add('grid-item');
+            div.appendChild(h3);
+            div.appendChild(image);
+            div.appendChild(p);
+        });
+    }
+
 
 
     //11. Generate Tiles for each Dino in Array <-- how do you do this??
